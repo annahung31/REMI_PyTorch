@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib import pyplot
 
 
-class XLinear(object):
+class XLTransformer(object):
     def __init__(self, modelConfig, device, event2word, word2event, is_training=True):
 
         self.event2word = event2word

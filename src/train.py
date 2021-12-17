@@ -1,4 +1,4 @@
-from model import XLinear
+from model import XLTransformer
 import numpy as np
 import pickle
 import os
@@ -20,13 +20,9 @@ def main():
     event2word, word2event = pickle.load(open(os.path.join(trainConfig['ROOT'],'dictionary.pkl'), 'rb'))
 
     # load train data
-    if not modelConfig['adaptive_len']:
-        training_data = np.load(os.path.join(trainConfig['ROOT'],'train_data.npy'))
-    else:
-        training_data = np.load(os.path.join(trainConfig['ROOT'],'train_data_all.npy'))
-    
 
-    
+    training_data = np.load(os.path.join(trainConfig['ROOT'],'train_data.npy'))
+
 
     device = torch.device("cuda:{}".format(trainConfig['gpuID']) if not trainConfig["no_cuda"] and torch.cuda.is_available() else "cpu")
     print('Device to train:', device)
@@ -34,7 +30,7 @@ def main():
     resume = trainConfig['resume_training_model']
 
     # declare model
-    model = XLinear(
+    model = XLTransformer(
             modelConfig,
             device,
             event2word=event2word, 

@@ -1,4 +1,4 @@
-from model import XLinear
+from model import XLTransformer
 import pickle
 import random
 import os
@@ -50,7 +50,7 @@ def main():
     print('Device to generate:', device)
 
     # declare model
-    model = XLinear(
+    model = XLTransformer(
             modelConfig,
             device,
             event2word=event2word, 

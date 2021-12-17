@@ -32,7 +32,7 @@ MODEL:
 
 
 TRAIN: 
-    ROOT: '/home/annahung/189nas/datasets/775'
+    ROOT: 'datasets/775'
     gpuID: '1'
     output_dir: "./result"
     batch_size: 5  #5
@@ -61,7 +61,7 @@ TRAIN:
 INFERENCE:
     num_sample: 95
     gpuID: '1'
-    dictionary_path: '/home/annahung/189nas/datasets/775/dictionary.pkl'
+    dictionary_path: '775/dictionary.pkl'
     experiment_dir: './result/20200810-160200/'   #20200722-062708
     checkpoint_type: epoch_idx        #best_train, best_val, epoch_idx
     model_epoch: 60  #460,
