@@ -341,8 +341,6 @@ class Event(object):
 
 
 
-
-
 # item to event
 def item2event(groups):
     events = []
